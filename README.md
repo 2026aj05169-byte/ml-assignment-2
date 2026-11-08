@@ -27,9 +27,9 @@ Ten characteristics are measured: radius, texture, perimeter, area, smoothness, 
 Important label conversion: scikit-learn encodes malignant as 0; train.py deliberately remaps malignant to 1 so recall refers to malignant samples throughout this project.
 
 ## c. Github Repository Link
-REPLACE_WITH_GITHUB_REPOSITORY_URL
+https://github.com/2026aj05169-byte/ml-assignment-2
 
-Live Streamlit App Link: REPLACE_WITH_STREAMLIT_APP_URL
+Live Streamlit App Link: https://ml-assignment-2-hncfbjxbwegpdofuaj7sz4.streamlit.app/
 
 ### Repository contents
 - app.py: interactive Streamlit inference and evaluation interface.
@@ -96,7 +96,7 @@ Values are rounded to four decimals only for display. reports/metrics.csv contai
 | Support Vector Machine | 72 | 0 | 3 | 39 |
 
 ### Reproduce and run
-Use Python 3.12 and run from this project directory:
+The deployed artifacts were trained in Colab using Python 3.13. The assignment was also executed and verified independently in BITS Virtual Lab using Python 3.12.7 with the same pinned dependencies and matching results. Use Python 3.13 to match the cloud artifacts, and run from this project directory:
 
 ```bash
 python -m venv .venv
@@ -107,7 +107,7 @@ python verify.py
 python -m streamlit run app.py
 ```
 
-On Windows, replace the activation command with .venv\Scripts\activate. Saved models are included, so train.py is optional for a quick local demonstration but must be run in BITS Virtual Lab for the assignment execution. Model serialization is version-sensitive: retain pinned dependencies and Python 3.12 on the cloud. If any training choices are changed, regenerate the models, metrics, CSVs, and update all README numbers and observations together.
+On Windows, replace the activation command with .venv\Scripts\activate. Saved models are included, so train.py is optional for a quick local demonstration but must be run in BITS Virtual Lab for the assignment execution. Model serialization is version-sensitive: retain pinned dependencies and Python 3.13 on the cloud. If any training choices are changed, regenerate the models, metrics, CSVs, and update all README numbers and observations together.
 
 ### App behavior and test CSV contract
 The app initially evaluates the bundled test_data.csv. Upload a labeled CSV with exactly the same 30 feature names and target column. Columns can be reordered, but extra or missing columns, duplicate headers, nonnumeric values, missing values, infinities, or targets outside 0/1 are rejected. Limit: 5 MB and 10,000 rows. Raw measurements are required; do not manually scale them. Pipelines apply their fitted scaling.
@@ -115,7 +115,7 @@ The app initially evaluates the bundled test_data.csv. Upload a labeled CSV with
 The dropdown selects a detailed model view with six metrics, confusion matrix, classification report, and downloadable predictions. A comparison table always evaluates all five models on the same uploaded rows. The app never fits any model. Never upload private patient data or untrusted joblib/pickle files. Only the bundled, trusted model files are deserialized.
 
 ### Deployment and submission
-Use Streamlit Community Cloud with app.py, branch main, Python 3.12, and requirements.txt at repository root. Follow DEPLOYMENT_GUIDE.md. Replace both link markers above with your actual public URLs before submission. The submitted PDF must contain, in order: GitHub link, live app link, BITS Virtual Lab execution screenshot, and this complete README.
+Use Streamlit Community Cloud with app.py, branch main, Python 3.13, and requirements.txt at repository root. Follow DEPLOYMENT_GUIDE.md. The public repository and app URLs are provided above. The submitted PDF must contain, in order: GitHub link, live app link, BITS Virtual Lab execution screenshot, and this complete README.
 
 ### Limitations and learning declaration
 This small dataset and single holdout provide an educational comparison. There is no external validation, repeated-split study, or clinical assessment. Test metrics must not be used to tune hyperparameters. Future work could tune on training-only cross-validation and reserve a fresh external test set.
